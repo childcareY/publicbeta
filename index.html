@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Page Redirect</title>
+    <script>
+        window.onload = function() {
+            // Array of page URLs
+            const pages = [
+                "https://yeheliyo.com/gampaha.php",
+                "https://yeheliyo.com/aunty.php",
+                "https://yeheliyo.com/rata.php",
+                "https://yeheliyo.com/juus.php",
+                "https://yeheliyo.com/petti.php",
+                "https://yeheliyo.com/horen.php",
+                "https://yeheliyo.com/katugas.php",
+                "https://yeheliyo.com/mas.php",
+                "https://yeheliyo.com/miniha.php"
+            ];
+
+            // Select a random page
+            const randomPage = pages[Math.floor(Math.random() * pages.length)];
+
+            // Redirect to the selected page
+            window.location.href = randomPage;
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting you to a random page...</p>
+</body>
+</html>
